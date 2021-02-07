@@ -16,7 +16,7 @@ def test_register(client, app):
         ).fetchone() is not None
 
 
-@pytest.mark.parametrize(('username', 'password', 'message'),(
+@pytest.mark.parametrize(('username', 'password', 'message'), (
     ('', '', b'Username is required.'),
     ('a', '', b'Password is required.'),
     ('test', 'test', b'already registered'),
@@ -55,4 +55,3 @@ def test_logout(client, auth):
     with client:
         auth.logout()
         assert 'user_id' not in session
-
