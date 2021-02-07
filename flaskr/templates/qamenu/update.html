@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="display-5 text-center my-5">{% block title %} "{{ category['category_name'] }}"の編集{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <div class="mb-3 mx-auto" style="width: 400px;">
+        <label for="category_name">項目名</label>
+        <input name="category_name" id="category_name"
+            value="{{ request.form['category_name'] or category['category_name'] }}" required>
+    </div>
+    <div class="mb-3 mx-auto" style="width: 400px;">
+        <label for="detail">詳細</label>
+        <textarea name="detail" id="detail">{{ request.form['detail'] or category['detail'] }}</textarea>
+    </div>
+    <div class="mx-auto" style="width: 100px;">
+        <input type="submit" value="保存">
+    </div>
+</form>
+<hr>
+<div class="mx-auto" style="width: 100px;">
+    <form action="{{ url_for('qamenu.delete', id=category['id']) }}" method="post">
+        <input class="danger" type="submit" value="削除" onclick="return confirm('ほんとに削除しますか?');">
+    </form>
+</div>
+{% endblock %}

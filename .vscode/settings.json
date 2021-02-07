@@ -1,3 +1,18 @@
 {
-    "python.pythonPath": "/home/eto/.pyenv/versions/3.9.1/bin/python"
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "python.linting.lintOnSave": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore=W293, W504",
+        "--max-line-length=150",
+        "--max-complexity=20"
+    ],
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--aggressive", "--aggressive",
+    ],
+    "autoDocstring.docstringFormat": "google",
+    "python.pythonPath": "/home/eto/.local/share/virtualenvs/qadb-ZEg0U_zs/bin/python"
 }

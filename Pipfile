@@ -8,8 +8,13 @@ flask = "*"
 flask-sqlalchemy = "*"
 flake8 = "*"
 flask-migrate = "*"
+autopep8 = "*"
 
 [dev-packages]
+autopep8 = "*"
+flake8 = "*"
+pytest = "*"
+coverage = "*"
 
 [requires]
 python_version = "3.8"

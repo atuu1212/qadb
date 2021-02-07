@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1 class="display-5 text-center my-5">{% block title %}登録{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <div class="mb-3 mx-auto" style="width: 400px;">
+      <label for="username" class="form-label">ユーザー名</label>
+      <input type="text" class="form-control" name="username" id="username" required>
+    </div>
+    <div class="mb-3 mx-auto" style="width: 400px;">
+      <label for="password" class="form-label">パスワード</label>
+      <input type="password" class="form-control" name="password" id="password" required>
+    </div>
+    <div class="mx-auto" style="width: 100px;">
+        <button type="submit" class="btn btn-primary" >登録</button>
+    </div>
+  </form>
+{% endblock %}
