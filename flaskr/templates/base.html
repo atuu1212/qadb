@@ -46,19 +46,19 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">
+                            <a class="nav-link active" aria-current="page" href="{{ url_for('dashboad.dashboad') }}">
                                 <span data-feather="home"></span>
                                 ダッシュボード
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ url_for('monthly_qa.monthly_qa') }}">
                                 <span data-feather="file"></span>
                                 月間QA
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ url_for('annual_qa.annual_qa') }}">
                                 <span data-feather="shopping-cart"></span>
                                 年間QA
                             </a>
@@ -70,7 +70,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ url_for('qa_report.qareport') }}">
                                 <span data-feather="bar-chart-2"></span>
                                 レポート
                             </a>
@@ -120,7 +120,7 @@
             </nav>
         </div>
     </div>
-    <section class="content">
+    <section class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <header class="display-1">
             {% block header %}{% endblock %}
         </header>
@@ -130,6 +130,9 @@
         {% block content %}{% endblock %}
     </section>
     <script src="{{ url_for('static', filename='/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='/js/feather.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='/js/Chart.min.js') }}"></script>
     <script src="{{ url_for('static', filename='/js/dashboard.js') }}"></script>
 </body>
+
 </html>

@@ -36,8 +36,20 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
 
-    from . import qamenu
-    app.register_blueprint(qamenu.bp)
+    from . import dashboad
+    app.register_blueprint(dashboad.bp)
+
+    from . import monthly_qa
+    app.register_blueprint(monthly_qa.bp)
+
+    from . import annual_qa
+    app.register_blueprint(annual_qa.bp)
+
+    from . import qa_report
+    app.register_blueprint(qa_report.bp)
+
+    from . import qa_menu
+    app.register_blueprint(qa_menu.bp)
     app.add_url_rule('/', endpoint='index')
 
     return app

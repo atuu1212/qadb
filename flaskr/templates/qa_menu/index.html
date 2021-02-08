@@ -4,7 +4,7 @@
   <h1 class="display-5 text-center my-5">{% block title %}QA menu{% endblock %}</h1>
   {% if g.user %}
   <div class="text-center my-3" style="font-size: large;">
-      <a class="action" href="{{ url_for('qamenu.create') }}">新規追加</a>
+      <a class="action" href="{{ url_for('qa_menu.create') }}">新規追加</a>
   </div>
   {% endif %}
 {% endblock %}
@@ -18,7 +18,7 @@
           <div class="about">by {{ category['username'] }} on {{ category['created'].strftime('%Y-%m-%d') }}</div>
         </div>
         {% if g.user['id'] == category['author_id'] %}
-          <a class="action" href="{{ url_for('qamenu.update', id=category['id']) }}">Edit</a>
+          <a class="action" href="{{ url_for('qa_menu.update', id=category['id']) }}">Edit</a>
           {% endif %}
       </header>
       <p class="detail">{{ category['detail'] }}</p>

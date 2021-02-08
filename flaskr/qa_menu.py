@@ -6,7 +6,7 @@ from werkzeug.exceptions import abort
 from flaskr.auth import login_required
 from flaskr.db import get_db
 
-bp = Blueprint('qamenu', __name__)
+bp = Blueprint('qa_menu', __name__)
 
 
 @bp.route('/')
@@ -17,7 +17,7 @@ def index():
         ' FROM qacategories cat JOIN user u ON cat.author_id = u.id'
         ' ORDER BY category_name DESC'
     ).fetchall()
-    return render_template('qamenu/index.html', categories=categories)
+    return render_template('qa_menu/index.html', categories=categories)
 
 
 @bp.route('/create', methods=('GET', 'POST'))
@@ -43,9 +43,9 @@ def create():
                 (category, detail, g.user['id'])
             )
             db.commit()
-            return redirect(url_for('qamenu.index'))
+            return redirect(url_for('qa_menu.index'))
 
-    return render_template('qamenu/create.html')
+    return render_template('qa_menu/create.html')
 
 
 def get_qacategory(id, check_author=True):
@@ -90,9 +90,9 @@ def update(id):
                 (category, detail, id)
             )
             db.commit()
-            return redirect(url_for('qamenu.index'))
+            return redirect(url_for('qa_menu.index'))
 
-    return render_template('qamenu/update.html', category=category)
+    return render_template('qa_menu/update.html', category=category)
 
 
 # 削除の関数．テンプレートはなしで．
@@ -104,4 +104,4 @@ def delete(id):
     db.execute('DELETE FROM qacategories WHERE id = ?', (id,))
     db.commit()
     # テンプレ作ってないのでPOSTだけ処理してindexへ飛ばす
-    return redirect(url_for('qamenu.index'))
+    return redirect(url_for('qa_menu.index'))
