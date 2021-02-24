@@ -14,5 +14,5 @@
         "--aggressive", "--aggressive",
     ],
     "autoDocstring.docstringFormat": "google",
-    "python.pythonPath": "/home/eto/.local/share/virtualenvs/qadb-ZEg0U_zs/bin/python"
+    "python.pythonPath": "/home/user/.local/share/virtualenvs/qadb-ZEg0U_zs/bin/python"
 }
